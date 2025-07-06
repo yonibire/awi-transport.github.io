@@ -1,0 +1,2457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>አዊ/ብሔ/አስ/ትራንስፖርት እና ሎጄስቲክስ ጽ/ቤት | AWi Transport & Logistics</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Ethiopic:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <style>
+        :root {
+            --primary-color: #1a3a6e;  /* Darker blue for professionalism */
+            --secondary-color: #e63946; /* Vibrant red for accents */
+            --accent-color: #457b9d;   /* Complementary blue */
+            --light-color: #f8f9fa;
+            --dark-color: #212529;
+            --text-color: #333;
+            --text-light: #6c757d;
+            --white: #fff;
+            --black: #000;
+            --transition: all 0.3s ease;
+            --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --box-shadow-hover: 0 15px 30px rgba(0, 0, 0, 0.2);
+            --header-gradient: linear-gradient(135deg, #1a3a6e 0%, #457b9d 100%);
+        }
+        
+        /* Language display control */
+        .english {
+            display: none;
+        }
+
+        body.english .english {
+            display: block;
+        }
+
+        body.english .lang-am {
+            display: none;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans Ethiopic', sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--secondary-color);
+            margin: 15px auto 0;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--secondary-color);
+            color: var(--white);
+            padding: 12px 25px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #c1121f;
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow-hover);
+        }
+
+        /* Header Styles - Modern Redesign */
+        .sticky-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 15px 0;
+            background: var(--header-gradient);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .sticky-header.scrolled {
+            padding: 10px 0;
+            background: rgba(26, 58, 110, 0.98);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            transition: var(--transition);
+        }
+
+        .logo:hover {
+            transform: translateY(-2px);
+        }
+
+        .logo img {
+            height: 60px;
+            margin-right: 15px;
+            border-radius: 5px;
+        }
+
+        .logo-text h1 {
+            font-size: 18px;
+            margin-bottom: 5px;
+            color: var(--white);
+            font-weight: 700;
+        }
+
+        /* Modern Navigation */
+        .nav-links {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            align-items: center;
+        }
+
+        .nav-links li {
+            margin-left: 25px;
+            position: relative;
+        }
+
+        .nav-links a {
+            font-weight: 600;
+            color: var(--white);
+            font-size: 15px;
+            padding: 8px 12px;
+            border-radius: 4px;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .nav-links a:hover {
+            background-color: rgba(255, 255, 255, 0.15);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        .nav-links a.active {
+            background-color: var(--secondary-color);
+            color: var(--white);
+        }
+
+        .nav-links a i {
+            margin-right: 8px;
+            font-size: 14px;
+        }
+
+        /* Language Switcher - Modern */
+        .language-switcher {
+            margin-left: 20px;
+            position: relative;
+        }
+
+        .language-switcher button {
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: var(--white);
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            padding: 8px 15px;
+            border-radius: 30px;
+            transition: var(--transition);
+        }
+
+        .language-switcher button:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .language-switcher button i {
+            margin-left: 8px;
+            font-size: 12px;
+        }
+
+        .language-dropdown {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: var(--white);
+            border-radius: 8px;
+            box-shadow: var(--box-shadow);
+            padding: 10px 0;
+            min-width: 140px;
+            display: none;
+            z-index: 100;
+            margin-top: 10px;
+        }
+
+        .language-dropdown.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .language-dropdown a {
+            display: flex;
+            align-items: center;
+            padding: 8px 15px;
+            color: var(--dark-color);
+            font-size: 14px;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .language-dropdown a:hover {
+            background-color: var(--light-color);
+            color: var(--secondary-color);
+            padding-left: 20px;
+        }
+
+        .language-dropdown a i {
+            margin-right: 8px;
+            color: var(--secondary-color);
+        }
+
+        /* Mobile Menu Toggle */
+        .menu-toggle {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--white);
+            background: rgba(255, 255, 255, 0.1);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            z-index: 1001;
+        }
+
+        .menu-toggle:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .menu-toggle.active {
+            transform: rotate(90deg);
+        }
+
+        /* Mobile Menu */
+        @media (max-width: 992px) {
+            .menu-toggle {
+                display: flex;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 300px;
+                height: 100vh;
+                background: var(--header-gradient);
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: center;
+                transition: var(--transition);
+                z-index: 1000;
+                box-shadow: -5px 0 25px rgba(0, 0, 0, 0.2);
+                padding: 80px 30px 30px;
+            }
+            
+            .nav-links.active {
+                right: 0;
+            }
+            
+            .nav-links li {
+                margin: 15px 0;
+                width: 100%;
+            }
+            
+            .nav-links a {
+                font-size: 16px;
+                padding: 12px 15px;
+                width: 100%;
+                border-radius: 6px;
+            }
+            
+            .language-switcher {
+                margin-left: 0;
+                margin-top: 20px;
+                width: 100%;
+            }
+            
+            .language-switcher button {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .language-dropdown {
+                width: 100%;
+                right: auto;
+                left: 0;
+            }
+        }
+
+        /* Hero Slider */
+        .hero-slider {
+            margin-top: 90px;
+            position: relative;
+        }
+
+        .swiper-slide {
+            position: relative;
+            height: 80vh;
+            min-height: 500px;
+            overflow: hidden;
+        }
+
+        .swiper-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .slide-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        .slide-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: var(--white);
+            width: 80%;
+            max-width: 800px;
+            z-index: 10;
+        }
+
+        .slide-content h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .slide-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        .swiper-button-next,
+        .swiper-button-prev {
+            color: var(--white);
+            background: rgba(255, 255, 255, 0.2);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+
+        .swiper-button-next:hover,
+        .swiper-button-prev:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .swiper-button-next::after,
+        .swiper-button-prev::after {
+            font-size: 20px;
+        }
+
+        .swiper-pagination-bullet {
+            width: 12px;
+            height: 12px;
+            background: var(--white);
+            opacity: 0.7;
+        }
+
+        .swiper-pagination-bullet-active {
+            background: var(--secondary-color);
+            opacity: 1;
+        }
+
+        /* About Section */
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about-content p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        /* Core Values */
+        .core-values {
+            background: #f8f9fa;
+        }
+
+        .values-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .value-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: var(--box-shadow);
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .value-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--box-shadow-hover);
+        }
+
+        .value-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--primary-color);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 30px;
+        }
+
+        .value-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .value-card p,
+        .value-card ul {
+            font-size: 1rem;
+            color: var(--text-light);
+            margin-bottom: 15px;
+        }
+
+        .value-card ul {
+            text-align: left;
+            list-style-position: inside;
+        }
+
+        .value-card li {
+            margin-bottom: 8px;
+        }
+
+        /* VIP Services */
+        .vip-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .vip-card {
+            background: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+
+        .vip-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--box-shadow-hover);
+        }
+
+        .vip-header {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 15px;
+            text-align: center;
+        }
+
+        .vip-header h3 {
+            font-size: 1.2rem;
+        }
+
+        .vip-body {
+            padding: 20px;
+        }
+
+        .vip-body ul {
+            list-style-type: none;
+        }
+
+        .vip-body li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+            font-size: 0.95rem;
+        }
+
+        .vip-body li:last-child {
+            border-bottom: none;
+        }
+
+        /* Leadership Section - Improved */
+        .leadership-section {
+            background: #f8f9fa;
+        }
+
+        .leaders-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .leader-card {
+            background: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .leader-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--box-shadow-hover);
+        }
+
+        .leader-image {
+            position: relative;
+            height: 300px;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .leader-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .leader-card:hover .leader-image img {
+            transform: scale(1.05);
+        }
+
+        .social-links {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .leader-card:hover .social-links {
+            opacity: 1;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: var(--secondary-color);
+            color: var(--white);
+            border-radius: 50%;
+            margin: 0 5px;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--primary-color);
+            transform: translateY(-5px);
+        }
+
+        .leader-info {
+            padding: 25px;
+            text-align: center;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .leader-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .position {
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+
+        .bio {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            flex-grow: 1;
+        }
+
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--box-shadow-hover);
+        }
+
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--primary-color);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 25px;
+        }
+
+        .service-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            text-align: center;
+        }
+
+        .service-card ul {
+            list-style-type: none;
+            flex-grow: 1;
+        }
+
+        .service-card li {
+            padding: 8px 0;
+            border-bottom: 1px dashed #eee;
+            font-size: 0.95rem;
+        }
+
+        .service-card li:last-child {
+            border-bottom: none;
+        }
+
+        /* Gallery Section - Improved */
+        .gallery-section {
+            background: #f8f9fa;
+        }
+
+        .gallery-swiper {
+            width: 100%;
+            max-width: 1800px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .gallery-item {
+            width: 400px;
+            position: relative;
+            overflow: hidden;
+            height: 400px; /* Fixed height for all gallery items */
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            color: var(--white);
+            padding: 20px;
+            transform: translateY(0);
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .gallery-item:hover .gallery-caption {
+            transform: translateY(0);
+        }
+
+        .gallery-caption h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .gallery-caption p {
+            font-size: 0.9rem;
+        }
+
+        /* Gallery Pagination */
+        .gallery-pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .gallery-pagination .swiper-pagination-bullet {
+            width: 12px;
+            height: 12px;
+            margin: 0 5px;
+            background: var(--text-light);
+            opacity: 0.5;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .gallery-pagination .swiper-pagination-bullet-active {
+            background: var(--secondary-color);
+            opacity: 1;
+            transform: scale(1.2);
+        }
+
+        /* News Section - Improved */
+        .news-section {
+            background: #f8f9fa;
+        }
+
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .news-card {
+            background: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .news-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--box-shadow-hover);
+        }
+
+        .news-image {
+            position: relative;
+            height: 250px;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .news-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .news-card:hover .news-image img {
+            transform: scale(1.05);
+        }
+
+        .news-date {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--secondary-color);
+            color: var(--white);
+            padding: 10px;
+            text-align: center;
+            border-radius: 5px;
+            line-height: 1;
+        }
+
+        .news-date .day {
+            font-size: 1.5rem;
+            font-weight: 700;
+            display: block;
+        }
+
+        .news-date .month {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+
+        .news-date .year {
+            font-size: 0.8rem;
+        }
+
+        .news-content {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .news-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .news-excerpt p {
+            color: var(--text-light);
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+            flex-grow: 1;
+        }
+
+        .news-full {
+            display: none;
+            color: var(--text-light);
+            font-size: 0.95rem;
+            flex-grow: 1;
+        }
+
+        .news-full p {
+            margin-bottom: 15px;
+        }
+
+        .news-full ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        .news-full li {
+            margin-bottom: 8px;
+        }
+
+        .read-more-btn {
+            display: inline-block;
+            color: var(--secondary-color);
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            margin-top: auto;
+            align-self: flex-start;
+        }
+
+        .read-more-btn:hover {
+            color: var(--primary-color);
+        }
+
+        .read-more-btn i {
+            margin-left: 5px;
+            transition: var(--transition);
+        }
+
+        .read-more-btn.active i {
+            transform: rotate(180deg);
+        }
+
+        /* See All News Section */
+        .see-all-news {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        /* Contact Section */
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+        }
+
+        .contact-info {
+            display: grid;
+            gap: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--primary-color);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .contact-details h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .contact-details p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 5px;
+        }
+
+        .contact-form .form-group {
+            margin-bottom: 20px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(26, 58, 110, 0.1);
+        }
+
+        .contact-form textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        .map {
+            margin-top: 50px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-color);
+            color: var(--white);
+            padding: 60px 0 0;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h3 {
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            color: var(--white);
+            position: relative;
+        }
+
+        .footer-col h3::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background: var(--secondary-color);
+            margin-top: 15px;
+        }
+
+        .footer-about p {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+
+        .footer-social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .footer-social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+
+        .footer-social-links a:hover {
+            background: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col li {
+            margin-bottom: 15px;
+        }
+
+        .footer-col a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 0.95rem;
+        }
+
+        .footer-col a:hover {
+            color: var(--secondary-color);
+            padding-left: 5px;
+        }
+
+        .footer-col i {
+            margin-right: 10px;
+            color: var(--secondary-color);
+            width: 20px;
+            text-align: center;
+        }
+
+        .copyright {
+            text-align: center;
+            padding: 20px 0;
+            background: rgba(0, 0, 0, 0.2);
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--secondary-color);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 999;
+        }
+
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: var(--primary-color);
+            transform: translateY(-5px);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .section-padding {
+                padding: 60px 0;
+            }
+            
+            .slide-content h2 {
+                font-size: 2rem;
+            }
+            
+            .slide-content p {
+                font-size: 1rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .hero-slider {
+                margin-top: 70px;
+            }
+            
+            .swiper-slide {
+                height: 70vh;
+                min-height: 400px;
+            }
+            
+            .gallery-item {
+                height: 300px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .section-padding {
+                padding: 50px 0;
+            }
+            
+            .slide-content h2 {
+                font-size: 1.8rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .swiper-slide {
+                height: 60vh;
+                min-height: 350px;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-col {
+                margin-bottom: 30px;
+            }
+            
+            .footer-col:last-child {
+                margin-bottom: 0;
+            }
+            
+            .back-to-top {
+                width: 40px;
+                height: 40px;
+                font-size: 16px;
+                bottom: 20px;
+                right: 20px;
+            }
+            
+            .gallery-item {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="sticky-header">
+        <div class="container">
+            <div class="logo">
+                <img src="images/logo.jpg" alt="AWi Transport Logo">
+                <div class="logo-text">
+                    <h1 class="lang-am">አዊ/ብሔ/አስ/ትራ/ሎጄ/ጽ/ቤት</h1>
+                    <h1 class="lang-en">AWi Transport & Logistics Office</h1>
+                </div>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#home" class="active lang-am"><i class="fas fa-home"></i>መነሻ</a><a href="#home" class="active lang-en"><i class="fas fa-home"></i>Home</a></li>
+                    <li><a href="#about" class="lang-am"><i class="fas fa-info-circle"></i>ስለ እኛ</a><a href="#about" class="lang-en"><i class="fas fa-info-circle"></i>About</a></li>
+                    <li><a href="#services" class="lang-am"><i class="fas fa-truck"></i>አገልግሎቶች</a><a href="#services" class="lang-en"><i class="fas fa-truck"></i>Services</a></li>
+                    <li><a href="#leaders" class="lang-am"><i class="fas fa-users"></i>ቡድን</a><a href="#leaders" class="lang-en"><i class="fas fa-users"></i>Leadership</a></li>
+                    <li><a href="#gallery" class="lang-am"><i class="fas fa-camera"></i>ፎቶ</a><a href="#gallery" class="lang-en"><i class="fas fa-camera"></i>Gallery</a></li>
+                    <li><a href="#news" class="lang-am"><i class="fas fa-newspaper"></i>ዜና</a><a href="#news" class="lang-en"><i class="fas fa-newspaper"></i>News</a></li>
+                    <li><a href="#contact" class="lang-am"><i class="fas fa-envelope"></i>አግኙን</a><a href="#contact" class="lang-en"><i class="fas fa-envelope"></i>Contact</a></li>
+                </ul>
+                <div class="language-switcher">
+                    <button id="languageToggle">
+                        <span class="lang-am"><i class="fas fa-globe"></i> English</span>
+                        <span class="lang-en"><i class="fas fa-globe"></i> አማርኛ</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="language-dropdown">
+                        <a href="#" class="lang-am" id="switchToEnglish"><i class="fas fa-language"></i> English</a>
+                        <a href="#" class="lang-en" id="switchToAmharic"><i class="fas fa-language"></i> አማርኛ</a>
+                    </div>
+                    
+                </div>
+                <div class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Home/Slider Section -->
+    <section id="home" class="hero-slider">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="images/slide1.jpg" alt="Transport Service 1">
+                    <div class="slide-overlay"></div>
+                    <div class="slide-content">
+                        <h2 class="lang-am">የአዊ/ብሔ/አስ/ትራ/ሎጄ/ጽ/ቤት</h2>
+                        <h2 class="lang-en">AWi Transport & Logistics Office</h2>
+                        <p class="lang-am">AWI Transport & Logistics Office</p>
+                        <p class="lang-en">Professional transport solutions</p>
+                        <a href="#services" class="btn lang-am">አገልግሎቶቻችን</a>
+                        <a href="#services" class="btn lang-en">Our Services</a>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/slide2.jpg" alt="Transport Service 2">
+                    <div class="slide-overlay"></div>
+                    <div class="slide-content">
+                        <h2 class="lang-am">ለተሻለ አሰራርና አገልግሎት እንተጋለን!!!</h2>
+                        <h2 class="lang-en">Committed to Better Service</h2>
+                        <p class="lang-am">Your trusted partner for transport and logistics</p>
+                        <p class="lang-en">Reliable transport solutions since 2010 E.C</p>
+                        <a href="#contact" class="btn lang-am">አግኙን</a>
+                        <a href="#contact" class="btn lang-en">Contact Us</a>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/slide3.jpg" alt="Transport Service 3">
+                    <div class="slide-overlay"></div>
+                    <div class="slide-content">
+                        <h2 class="lang-am">ዘመናዊ የትራንስፖርት አገልግሎት</h2>
+                        <h2 class="lang-en">Modern Transport Services</h2>
+                        <p class="lang-am">Modern transport solutions for the 21st century</p>
+                        <p class="lang-en">Innovative solutions for all your needs</p>
+                        <a href="#about" class="btn lang-am">ተጨማሪ ይወቁ</a>
+                        <a href="#about" class="btn lang-en">Learn More</a>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/slide4.jpg" alt="Transport Service 3">
+                    <div class="slide-overlay"></div>
+                    <div class="slide-content">
+                        <h2 class="lang-am">ዘመናዊ የትራንስፖርት አገልግሎት</h2>
+                        <h2 class="lang-en">Modern Transport Services</h2>
+                        <p class="lang-am">Modern transport solutions for the 21st century</p>
+                        <p class="lang-en">Innovative solutions for all your needs</p>
+                        <a href="#about" class="btn lang-am">ተጨማሪ ይወቁ</a>
+                        <a href="#about" class="btn lang-en">Learn More</a>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/slide3.jpg" alt="Transport Service 3">
+                    <div class="slide-overlay"></div>
+                    <div class="slide-content">
+                        <h2 class="lang-am">ዘመናዊ የትራንስፖርት አገልግሎት</h2>
+                        <h2 class="lang-en">Modern Transport Services</h2>
+                        <p class="lang-am">Modern transport solutions for the 21st century</p>
+                        <p class="lang-en">Innovative solutions for all your needs</p>
+                        <a href="#about" class="btn lang-am">ተጨማሪ ይወቁ</a>
+                        <a href="#about" class="btn lang-en">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+            <!-- Add Navigation -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about section-padding">
+        <div class="container">
+            <h2 class="section-title lang-am">ስለ እኛ</h2>
+            <h2 class="section-title lang-en">About Us</h2>
+            <div class="about-content">
+                <p class="lang-am">አዊ ትራንስፖርት በ2010 ዓ.ም ተመሠርቶ በሚሊዮኖች የሚቆጠሩ ደንበኞችን ያገለገለ የትራንስፖርት አገልግሎት ነው። በሙያዊነት፣ በልምድ እና በታማኝነት በሚታወቅበት ዘርፍ የምንሰራ ተቋም ነን። ሽግግር፣ ምክንያታዊነት እና ደንበኛ ዕርካታ የምንሰራበት መርህ ነው።</p>
+                <p class="lang-en">AWi Transport was established in 2005 and has served millions of customers with transport services. We are known for our professionalism, experience and reliability in the sector. Our principles are efficiency, rationality and customer satisfaction.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Values Section -->
+    <section id="values" class="core-values section-padding">
+        <div class="container">
+            <h2 class="section-title lang-am">እሴቶችና መርሆዎች</h2>
+            <h2 class="section-title lang-en">Our Core Values</h2>
+            <div class="values-container">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3 class="lang-am">ራዕይ</h3>
+                    <h3 class="lang-en">Vision</h3>
+                    <p class="lang-am">የብሔረሰብ አስተዳደሩን የትራንስፖርት መሰረተ ልማት በማስፋፋት በ2022 ህብረተሰቡ ደህንነቱ የተጠበቀ፣ ቀልጣፋና ዘመናዊ የትራንስፖርትና ሎጅስቲክስ አገልግሎት ተጠቃሚ ሆኖ ማየት።</p>
+                    <p class="lang-en">To see the community benefit from safe, efficient and modern transport and logistics services by 2022 through expanding the transport infrastructure development of the national administration.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3 class="lang-am">ተልዕኮ</h3>
+                    <h3 class="lang-en">Mission</h3>
+                    <p class="lang-am">የብሔረሰብ አስተዳደሩን የትራንስፖርት መሰረተ ልማት በማስፋፋት፣ ባለድርሻ አካላትን በማስተባበር፣ አገልግሎት አሰጣጡን በቴክኖሎጂ በማስደገፍ፣ ህግና ስርዓትን በማስከበር፣ ዘመናዊ፣ ቀልጣፋ፣ ምቾቱና ደህንነቱ የተጠበቀ የትራንስፖርትና የሎጅስቲክስ አገልግሎት መስጠት።</p>
+                    <p class="lang-en">To provide modern, efficient, comfortable and safe transport and logistics services by expanding transport infrastructure development, coordinating stakeholders, supporting service delivery with technology, and enforcing laws and regulations.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3 class="lang-am">እሴቶቻችን</h3>
+                    <h3 class="lang-en">Our Values</h3>
+                    <ul>
+                        <li class="lang-am">የተገልጋዩ ጥቅም ያስጠበቀ</li>
+                        <li class="lang-en">Customer benefit protected</li>
+                        
+                        <li class="lang-am">ከብልሹ �ሰራር የፀዳ</li>
+                        <li class="lang-en">Free from malpractice</li>
+                        
+                        <li class="lang-am">ሙስናን ኪራይ ሰብሳቢነትን የተፀየፈ</li>
+                        <li class="lang-en">Resistant to corruption and nepotism</li>
+                        
+                        <li class="lang-am">በግልጽነትና ተጠያቂነት የተመሰረተ አገልግሎት</li>
+                        <li class="lang-en">Service based on transparency and accountability</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VIP Services Section -->
+    <section id="vip" class="vip-services section-padding">
+        <div class="container">
+            <h2 class="section-title lang-am">ቅድሚያ የሚሰጣቸው</h2>
+            <h2 class="section-title lang-en">Priorities</h2>
+            <p class="text-center lang-am" style="max-width: 800px; margin: 0 auto 40px;">የሚከተሉት የማህበረሰብ አባላት በአዊ/ብሔ/አስ/ትራንስፖርትና ሎጄስቲክስ ጽ/ቤት ቅድሚያ የሚሰጣቸው ናቸው።</p>
+            <p class="text-center lang-en" style="max-width: 800px; margin: 0 auto 40px;">We provide priority services to the following groups to ensure efficient and dignified transportation for all members of society:</p>
+            
+            <div class="vip-grid">
+                <div class="vip-card">
+                    <div class="vip-header">
+                        <h3 class="lang-am">ጤና እና ልዩ ፍላጎት</h3>
+                        <h3 class="lang-en">Health & Special Needs</h3>
+                    </div>
+                    <div class="vip-body">
+                        <ul>
+                            <li class="lang-am">ነፍሰጡር ሴቶች</li>
+                            <li class="lang-en">Pregnant Women</li>
+                            
+                            <li class="lang-am">አካል ጉዳተኞች</li>
+                            <li class="lang-en">Customers with Disabilities</li>
+                            
+                            <li class="lang-am">የህክምና ዶክተሮች</li>
+                            <li class="lang-en">Medical Doctors</li>
+                            
+                            <li class="lang-am">የእሳት አደጋ ባለሙዎች</li>
+                            <li class="lang-en">Fire fighters</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="vip-card">
+                    <div class="vip-header">
+                        <h3 class="lang-am">አረጋውያን እና መንግስት</h3>
+                        <h3 class="lang-en">Elderly & Government</h3>
+                    </div>
+                    <div class="vip-body">
+                        <ul>
+                            <li class="lang-am">አረጋውያንና አዛውንቶች</li>
+                            <li class="lang-en">Elderly & Seniors</li>
+                            
+                            <li class="lang-am">ከፍተኛ የመንግስት ኃላፊዎች</li>
+                            <li class="lang-en">Senior Gov't Officials</li>
+                            
+                            <li class="lang-am">የምክር ቤት አባላት</li>
+                            <li class="lang-en">Council Members</li>
+                            
+                            <li class="lang-am">የፍርድ ቤት ዳኞች</li>
+                            <li class="lang-en">Court judges</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="vip-card">
+                    <div class="vip-header">
+                        <h3 class="lang-am">ደህንነት እና ንግድ</h3>
+                        <h3 class="lang-en">Security & Business</h3>
+                    </div>
+                    <div class="vip-body">
+                        <ul>
+                            <li class="lang-am">የሀገር መከላከያ አባላት</li>
+                            <li class="lang-en">National Defense force</li>
+                            
+                            <li class="lang-am">የፖሊስና የደህንነት አባላት</li>
+                            <li class="lang-en">Police & Security Members</li>
+                            
+                            <li class="lang-am">ከፍተኛ ግብር ከፋዮች</li>
+                            <li class="lang-en">High Tax Payers</li>
+                            
+                            <li class="lang-am">የሀገር ውስጥና ውጭ ኢንቨስተሮች</li>
+                            <li class="lang-en">Local & Foreign investors</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="vip-card">
+                    <div class="vip-header">
+                        <h3 class="lang-am">የትራንስፖርት ባለሙያዎች</h3>
+                        <h3 class="lang-en">Transport Professionals</h3>
+                    </div>
+                    <div class="vip-body">
+                        <ul>
+                            <li class="lang-am">ድንበር ተሻጋሪ ሹፌሮች</li>
+                            <li class="lang-en">Cross-border Drivers</li>
+                            
+                            <li class="lang-am">የአውሮፕላን ተጓዦች</li>
+                            <li class="lang-en">Airplane passengers</li>
+                            
+                            <li class="lang-am">የባቡር ሰራተኞች</li>
+                            <li class="lang-en">Railway workers</li>
+                            
+                            <li class="lang-am">የገጠር መንገድ ሰራተኞች</li>
+                            <li class="lang-en">Rural road workers</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership Section -->
+    <section id="leaders" class="leadership-section section-padding">
+        <div class="container">
+            <h2 class="section-title lang-am">የጽ/ቤት አመራሮች</h2>
+            <h2 class="section-title lang-en">Our Leadership Team</h2>
+            <div class="leaders-grid">
+                <div class="leader-card">
+                    <div class="leader-image">
+                        <img src="images/leader1.jpg" alt="Leader 1">
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                    <div class="leader-info">
+                        <h3>አቶ መኮንን ላቃይ አዲሱ (Mekonenn Laway Addisu)</h3>
+                        <p class="position lang-am">የመምሪያ ኋላፊ</p>
+                        <p class="position lang-en">Team Leader</p>
+                        <p class="bio lang-am">በ15 ዓመታት ያህል የስራ ልምድ ያለው ባለሙያ። በትራንስፖርት እና ሎጂስቲክስ ዘርፍ የሚያገኙትን ሁሉንም ችግሮች መፍታት በቅቷል።</p>
+                        <p class="bio lang-en">A professional with about 15 years of experience. Ready to solve all challenges in the transport and logistics sector.</p>
+                    </div>
+                </div>
+                
+                <div class="leader-card">
+                    <div class="leader-image">
+                        <img src="images/leader2.jpg" alt="Leader 2">
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                    <div class="leader-info">
+                        <h3>አቶ አበራ የኔው ፈንታየ (Abera Yeniw Fenetay)</h3>
+                        <p class="position lang-am">የትራንስፖርት ትራፊክ ደህነት ቡድን መሪ</p>
+                        <p class="position lang-en">Transport Service Head</p>
+                        <p class="bio lang-am">በ10 ዓመታት ያህል የስራ ልምድ ያለው ባለሙያ። የትራንስፖርት አገልግሎቶችን ለማሻሻል በጣም ተነሳሽነት ያለው።</p>
+                        <p class="bio lang-en">A professional with about 10 years of experience. Highly motivated to improve transport services.</p>
+                    </div>
+                </div>
+                
+                <div class="leader-card">
+                    <div class="leader-image">
+                        <img src="images/leader3.jpg" alt="Leader 3">
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                    <div class="leader-info">
+                        <h3>አቶ ሰለሞን አዳሙ  (Solomon Adamu)</h3>
+                        <p class="position lang-am">የአሽ/ብቃ/ማረ/ቡድን መሪ</p>
+                        <p class="position lang-en">Logistics Service Head</p>
+                        <p class="bio lang-am">በ12 ዓመታት ያህል የስራ ልምድ ያለው ባለሙያ። የሎጂስቲክስ ስርዓቶችን ለማሻሻል በጣም ተነሳሽነት ያለው።</p>
+                        <p class="bio lang-en">A professional with about 12 years of experience. Highly motivated to improve logistics systems.</p>
+                    </div>
+                </div>
+                
+                <div class="leader-card">
+                    <div class="leader-image">
+                        <img src="images/leader4.jpg" alt="Leader 4">
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                    <div class="leader-info">
+                        <h3>አቶ ጌትነት ቦጋል በላይ  (Getenet Bogale Blay)</h3>
+                        <p class="position lang-am">የኢንስፔክሽን ቡድን መሪ</p>
+                        <p class="position lang-en">Inspiction Head</p>
+                        <p class="bio lang-am">በ12 ዓመታት ያህል የስራ ልምድ ያለው ባለሙያ። የሎጂስቲክስ ስርዓቶችን ለማሻሻል በጣም ተነሳሽነት ያለው።</p>
+                        <p class="bio lang-en">A professional with about 12 years of experience. Highly motivated to improve logistics systems.</p>
+                    </div>
+                </div>
+                
+                <div class="leader-card">
+                    <div class="leader-image">
+                        <img src="images/leader5.jpg" alt="Leader 5">
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                    <div class="leader-info">
+                        <h3>አቶ የኔው ሞገስ  (Yeniw Moges)</h3>
+                        <p class="position lang-am">የተሽ/ብቃ/ማረ/ቡድን መሪ</p>
+                        <p class="position lang-en">Vehicle team leader</p>
+                        <p class="bio lang-am">በ12 ዓመታት ያህል የስራ ልምድ ያለው ባለሙያ። የሎጂስቲክስ ስርዓቶችን ለማሻሻል በጣም ተነሳሽነት ያለው።</p>
+                        <p class="bio lang-en">A professional with about 12 years of experience. Highly motivated to improve logistics systems.</p>
+                    </div>
+                </div>
+                
+                <div class="leader-card">
+                    <div class="leader-image">
+                        <img src="images/leader6.jpg" alt="Leader 6">
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                    <div class="leader-info">
+                        <h3>ወ/ሮ ሙሉነሽ ካሳሁን  (Mulunesh Kassahun)</h3>
+                        <p class="position lang-am">የትራንፖርት ብቃት ማረጋገጫ ስምሪት ቡድን መሪ</p>
+                        <p class="position lang-en">Transport Services Head</p>
+                        <p class="bio lang-am">በ12 ዓመታት ያህል የስራ ልምድ ያለው ባለሙያ። የሎጂስቲክስ ስርዓቶችን ለማሻሻል በጣም ተነሳሽነት ያለው።</p>
+                        <p class="bio lang-en">A professional with about 12 years of experience. Highly motivated to improve logistics systems.</p>
+                    </div>
+                </div>
+                
+                <div class="leader-card">
+                    <div class="leader-image">
+                        <img src="images/leader7.jpg" alt="Leader 7">
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                    <div class="leader-info">
+                        <h3>አቶ ደሳለኝ  (Desalegni)</h3>
+                        <p class="position lang-am">የመንሀሪያ ቡድን መሪ</p>
+                        <p class="position lang-en">Inspiction Head</p>
+                        <p class="bio lang-am">በ12 ዓመታት ያህል የስራ ልምድ ያለው ባለሙያ። የሎጂስቲክስ ስርዓቶችን ለማሻሻል በጣም ተነሳሽነት ያለው።</p>
+                        <p class="bio lang-en">A professional with about 12 years of experience. Highly motivated to improve logistics systems.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services section-padding">
+        <div class="container">
+            <h2 class="section-title lang-am">አገልግሎቶቻችን</h2>
+            <h2 class="section-title lang-en">Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-id-card"></i>
+                    </div>
+                    <h3 class="lang-am">የሹፌር ብቃት ማረጋገጫ</h3>
+                    <h3 class="lang-en">Driver Competency Certification</h3>
+                    <ul>
+                        <li class="lang-am">አዲስ መንጃ ፈቃድ መስጠት</li>
+                        <li class="lang-en">Issuance of new driver's license</li>
+                        
+                        <li class="lang-am">አዲስ እና ነባር መንጃ ፈቃድ ማደስ</li>
+                        <li class="lang-en">Renewal of new and existing driver's license</li>
+                        
+                        <li class="lang-am">የጠፋ መንጃ ፈቃድ ቅጅ መስጠት</li>
+                        <li class="lang-en">Issuance of lost driver's license copy</li>
+                        
+                        <li class="lang-am">የተጎዳ/የተሰበረ መንጃ ፈቃድ ቅጅ መስጠት</li>
+                        <li class="lang-en">Issuance of damaged/broken driver's license copy</li>
+                        
+                        <li class="lang-am">የመንጃ ፈቃድ የስም ለውጥ ማድረግ</li>
+                        <li class="lang-en">Name change on driver's license</li>
+                        
+                        <li class="lang-am">የመንጃ ፈቃድ ፋይል ዝውውር መስጠት እና መቀበል</li>
+                        <li class="lang-en">Transfer of driver's license file</li>
+                        
+                        <li class="lang-am">መንጃ ፈቃድ ኢንተርናሽናል ደብዳቤ መስጠት</li>
+                        <li class="lang-en">Issuance of international driver's license letter</li>
+                        
+                        <li class="lang-am">የተግባር እና የንድፈ ሃሳብ ፈተና መስጠት</li>
+                        <li class="lang-en">Practical and theoretical exam administration</li>
+                        
+                        <li class="lang-am">የተግባር እና የንድፈ ሃሳብ ፈተና ቀጠሮ መስጠት</li>
+                        <li class="lang-en">Scheduling practical and theoretical exams</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <h3 class="lang-am">የተሽከርካሪ ብቃት ማረጋገጫ</h3>
+                    <h3 class="lang-en">Vehicle Competency Certification</h3>
+                    <ul>
+                        <li class="lang-am">አዲስ መንጃ ፈቃድ መስጠት</li>
+                        <li class="lang-en">Issuance of new driver's license</li>
+                        
+                        <li class="lang-am">ለአዲስ ተሽከርካሪ ሰሌዳና ሊብሬ መስጠት</li>
+                        <li class="lang-en">Issuance of plates and libres for new vehicles</li>
+                        
+                        <li class="lang-am">ለተሽከርካሪ መሰረታዊ ፋይል ዝውውር መስጠትና መቀበል</li>
+                        <li class="lang-en">Transfer of basic vehicle files</li>
+                        
+                        <li class="lang-am">አመታዊ የቴክኒክ ምርመራ (ቦሎ) ማድረግ</li>
+                        <li class="lang-en">Annual technical inspection</li>
+                        
+                        <li class="lang-am">የጠፋ ሰሌዳ ወይም ሊብሬ መስጠት</li>
+                        <li class="lang-en">Issuance of lost plates or libres</li>
+                        
+                        <li class="lang-am">የተሽከርካሪ እገዳ ማገድና ማንሳት</li>
+                        <li class="lang-en">Vehicle impound and release</li>
+                        
+                        <li class="lang-am">የጥገና ተቋማት የብቃት ማረጋገጫ ፈቃድ መስጠት/ማደስ</li>
+                        <li class="lang-en">Issuance/renewal of competency certificates for maintenance institutions</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-traffic-light"></i>
+                    </div>
+                    <h3 class="lang-am">የመንገድ ላይ ደህንነት</h3>
+                    <h3 class="lang-en">Road Traffic Safety</h3>
+                    <ul>
+                        <li class="lang-am">የመንገድ ላይ ትምሀት መስጽዝጠት</li>
+                        <li class="lang-en">Road safety education</li>
+                        
+                        <li class="lang-am">የአልኮል ቴስት ቁጥጥር</li>
+                        <li class="lang-en">Alcohol test control</li>
+                        
+                        <li class="lang-am">አጠቃላይ ቁጥጥር</li>
+                        <li class="lang-en">General control</li>
+                        
+                        <li class="lang-am">የሽንት ምርመራ</li>
+                        <li class="lang-en">Drug testing</li>
+                        
+                        <li class="lang-am">የፍጥነት ቁጥጥር</li>
+                        <li class="lang-en">Speed control</li>
+                        
+                        <li class="lang-am">የመንገድ ምልክቶች እና ሕጎች ማስተማር</li>
+                        <li class="lang-en">Teaching road signs and rules</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-bus-alt"></i>
+                    </div>
+                    <h3 class="lang-am">የትራንስፖርት አገልግሎት ማረጋገጫ</h3>
+                    <h3 class="lang-en">Transport Service Certification</h3>
+                    <ul>
+                        <li class="lang-am">መርሃ ግብር ማፅደቅ</li>
+                        <li class="lang-en">Approval of schedules</li>
+                        
+                        <li class="lang-am">የጠፉ መርሃ ግብር ቅጅ መስጠት</li>
+                        <li class="lang-en">Issuance of lost schedule copies</li>
+                        
+                        <li class="lang-am">ቅያር መርሃ ግብር መስጠት</li>
+                        <li class="lang-en">Issuance of change schedules</li>
+                        
+                        <li class="lang-am">ወቅታዊ ታሪፍ መረጃ መስጠት</li>
+                        <li class="lang-en">Provision of current tariff information</li>
+                        
+                        <li class="lang-am">አዳዲስ መስመሮች በጥናት ይቶ እንዲከፈቱ ማድረግ</li>
+                        <li class="lang-en">Study and opening of new routes</li>
+                        
+                        <li class="lang-am">አዲስ የኦኘሬተር ፈቃድ መስጠት እና ነባር የኦኘሬተር ፈቃድ ማደስ</li>
+                        <li class="lang-en">Issuance of new operator licenses and renewal of existing ones</li>
+                        
+                        <li class="lang-am">የትራንስፖርት አገልግሎት ፈቃድ ማደስ</li>
+                        <li class="lang-en">Renewal of transport service licenses</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-clipboard-check"></i>
+                    </div>
+                    <h3 class="lang-am">የትራንስፖርት አገልግሎት ምርመራ</h3>
+                    <h3 class="lang-en">Transport Service Inspection</h3>
+                    <ul>
+                        <li class="lang-am">ድንገተኛ የቴክኒክ ምርመራ</li>
+                        <li class="lang-en">Random technical inspection</li>
+                        
+                        <li class="lang-am">የውስጥ እና �ውጭ ቁጥጥር</li>
+                        <li class="lang-en">Internal and external control</li>
+                        
+                        <li class="lang-am">ኢንስፔክሽን</li>
+                        <li class="lang-en">Inspection</li>
+                        
+                        <li class="lang-am">የተሽከርካሪ ጥራት ምርመራ</li>
+                        <li class="lang-en">Vehicle quality inspection</li>
+                        
+                        <li class="lang-am">የምርመራ ሪፖርት ማውጣት</li>
+                        <li class="lang-en">Issuance of inspection reports</li>
+                        
+                        <li class="lang-am">የአገልግሎት ጥራት ምርመራ</li>
+                        <li class="lang-en">Service quality inspection</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-road"></i>
+                    </div>
+                    <h3 class="lang-am">መሰረተ ልማት</h3>
+                    <h3 class="lang-en">Infrastructure Development</h3>
+                    <ul>
+                        <li class="lang-am">ተሽከርካሪ ማሰማራት</li>
+                        <li class="lang-en">Vehicle parking</li>
+                        
+                        <li class="lang-am">የመንገድ ላይ ቁጥጥር</li>
+                        <li class="lang-en">Road control</li>
+                        
+                        <li class="lang-am">ኢንስፔክሽን</li>
+                        <li class="lang-en">Inspection</li>
+                        
+                        <li class="lang-am">የመንገድ ምልክቶች እና ምልክቶች</li>
+                        <li class="lang-en">Road signs and markings</li>
+                        
+                        <li class="lang-am">የመንገድ ጥራት ምርመራ</li>
+                        <li class="lang-en">Road quality inspection</li>
+                        
+                        <li class="lang-am">የመንገድ ደህንነት እርምጃዎች</li>
+                        <li class="lang-en">Road safety measures</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section - Improved -->
+    <section id="gallery" class="gallery-section section-padding">
+        <div class="container">
+            <h2 class="section-title lang-am">ፎቶ ማህደር</h2>
+            <h2 class="section-title lang-en">Our Gallery</h2>
+            <div class="swiper-container gallery-swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide gallery-item">
+                        <img src="images/gallery1.jpg" alt="Gallery Image 1">
+                        <div class="gallery-caption">
+                            <h3 class="lang-am">የቡድናችን ስራ</h3>
+                            <h3 class="lang-en">Our Team at Work</h3>
+                            <p class="lang-am">በትራንስፖርት ዘርፍ የምናደርገው ስራ</p>
+                            <p class="lang-en">Our work in the transport sector</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide gallery-item">
+                        <img src="images/news3.jpg" alt="Gallery Image 2">
+                        <div class="gallery-caption">
+                            <h3 class="lang-am">የቡድናችን ስራ</h3>
+                            <h3 class="lang-en">Our Team at Work</h3>
+                            <p class="lang-am">በሎጂስቲክስ ዘርፍ የምናደርገው ስራ</p>
+                            <p class="lang-en">Our work in logistics</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide gallery-item">
+                        <img src="images/gallery3.jpg" alt="Gallery Image 3">
+                        <div class="gallery-caption">
+                            <h3 class="lang-am">የቡድናችን ስራ</h3>
+                            <h3 class="lang-en">Our Team at Work</h3>
+                            <p class="lang-am">በመንገድ ደህንነት ዘርፍ የምናደርገው ስራ</p>
+                            <p class="lang-en">Our work in road safety</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide gallery-item">
+                        <img src="images/gallery4.jpg" alt="Gallery Image 4">
+                        <div class="gallery-caption">
+                            <h3 class="lang-am">የቡድናችን ስራ</h3>
+                            <h3 class="lang-en">Our Team at Work</h3>
+                            <p class="lang-am">በመናኸሪያ ልማት ዘርፍ የምናደርገው ስራ</p>
+                            <p class="lang-en">Our work in infrastructure development</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide gallery-item">
+                        <img src="images/gallery5.jpg" alt="Gallery Image 5">
+                        <div class="gallery-caption">
+                            <h3 class="lang-am">የቡድናችን ስራ</h3>
+                            <h3 class="lang-en">Our Team at Work</h3>
+                            <p class="lang-am">የምርመራ እና ኢንስፔክሽን ስራዎች</p>
+                            <p class="lang-en">Inspection and examination work</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide gallery-item">
+                        <img src="images/gallery6.jpg" alt="Gallery Image 6">
+                        <div class="gallery-caption">
+                            <h3 class="lang-am">የቡድናችን ስራ</h3>
+                            <h3 class="lang-en">Our Team at Work</h3>
+                            <p class="lang-am">የሰራተኞች ስልጠና እና አቅም ግንባታ</p>
+                            <p class="lang-en">Staff training and capacity building</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide gallery-item">
+                        <img src="images/gallery7.jpg" alt="Gallery Image 7">
+                        <div class="gallery-caption">
+                            <h3 class="lang-am">የቡድናችን ስራ</h3>
+                            <h3 class="lang-en">Our Team at Work</h3>
+                            <p class="lang-am">የሰራተኞች ስልጠና እና አቅም ግንባታ</p>
+                            <p class="lang-en">Staff training and capacity building</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide gallery-item">
+                        <img src="images/gallery8.jpg" alt="Gallery Image 8">
+                        <div class="gallery-caption">
+                            <h3 class="lang-am">የቡድናችን ስራ</h3>
+                            <h3 class="lang-en">Our Team at Work</h3>
+                            <p class="lang-am">የሰራተኞች ስልጠና እና አቅም ግንባታ</p>
+                            <p class="lang-en">Staff training and capacity building</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination gallery-pagination"></div>
+                <!-- Add Navigation -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Section - Improved -->
+    <section id="news" class="news-section section-padding">
+        <div class="container">
+            <h2 class="section-title lang-am">የቅርብ ጊዜ ዜና</h2>
+            <h2 class="section-title lang-en">Latest News & Updates</h2>
+            <div class="news-grid">
+                <article class="news-card">
+                    <div class="news-image">
+                        <img src="images/news1.jpg" alt="News Image">
+                        <div class="news-date">
+                            <span class="day">15</span>
+                            <span class="month">June</span>
+                            <span class="year">2025</span>
+                        </div>
+                    </div>
+                    <div class="news-content">
+                        <h3 class="lang-am">አዊ ብሔ/አስ/ትራንስፖርትና ሎጄስቲክ ጽ/ቤት የራሱን ጽረገጽ አበልጽጎ ወደ ስራ ገብቷል</h3>
+                        <h3 class="lang-en">AWi Transport Launches New Website</h3>
+                        <div class="news-excerpt">
+                            <p class="lang-am">በአዊ ብሔ/አስ በ 3 መናኸሪያዎች የዲጂታል ቲኬት አገልግሎት ተግባራዊ ተደርጓል።</p>
+                            <p class="lang-en">Digital ticket service implemented at 3 terminals of AWi Transport.</p>
+                        </div>
+                        <div class="news-full">
+                            <p class="lang-am">በአዊ ብሔ/አስ በ 3 መናኸሪያዎች የዲጂታል ቲኬት አገልግሎት ተግባራዊ ተደርጓል። ይህ አዲሱ ስርዓት የሚከተሉትን ጥቅሞች ያስገኛል...</p>
+                            <p class="lang-en">Digital ticket service has been implemented at 3 terminals of AWi Transport. This new system brings the following benefits...</p>
+                            <ul>
+                                <li class="lang-am">የጊዜ ቁጠባ - ደንበኞች በመስመር ላይ ቲኬት ሊገዙ ይችላሉ</li>
+                                <li class="lang-en">Time saving - Customers can buy tickets online</li>
+                                <li class="lang-am">የተሻለ አገልግሎት - የማያቋርጥ እና የማቋረጥ አገልግሎት</li>
+                                <li class="lang-en">Better service - Continuous and uninterrupted service</li>
+                                <li class="lang-am">የሙስና መከላከል - የካሳ ሂደቱ ሙሉ በሙሉ ዲጂታል ስለሆነ ሙስና የለም</li>
+                                <li class="lang-en">Corruption prevention - Fully digital payment process eliminates corruption</li>
+                            </ul>
+                        </div>
+                        <a href="#" class="read-more-btn lang-am">ተጨማሪ ያንብቡ <i class="fas fa-arrow-down"></i></a>
+                        <a href="#" class="read-more-btn lang-en">Read More <i class="fas fa-arrow-down"></i></a>
+                    </div>
+                </article>
+                
+                <article class="news-card">
+                    <div class="news-image">
+                        <img src="images/news2.jpg" alt="News Image">
+                        <div class="news-date">
+                            <span class="day">10</span>
+                            <span class="month">May</span>
+                            <span class="year">2025</span>
+                        </div>
+                    </div>
+                    <div class="news-content">
+                        <h3 class="lang-am">በአዊ ብሔ/አስ በ 3 መናኸሪያዎች የዲጂታል ቲኬት አገልግሎት ተግባራዊ ተደርጓል</h3>
+                        <h3 class="lang-en">Digital Ticket Service Implemented at 3 Terminals</h3>
+                        <div class="news-excerpt">
+                            <p class="lang-am">የአዊ ብሔ/አስ ትራንስፖርትና ሎጀስቲክ ጽ/ቤት የ2017 ዓ.ም የእቅድ አፈጻጸሙን ከአጋርና ባለድርሻ አካላት ጋር ግምግሟል</p>
+                            <p class="lang-en">AWi Transport reviewed its 2017 performance with partners and stakeholders</p>
+                        </div>
+                        <div class="news-full">
+                            <p class="lang-am">የአዊ ብሔ/አስ የትራንስፖርት ዘርፉን ወደ ተሻለ ደረጃ እንዲሸጋገር የአምበሳውን ድርሻ እየተወጣ የሚገኘው አመራርና ባለሙያ መኮነን ላዋይን ልዩ ተሸላሚ በማድረግ የምስጋናና የእውቅና ስነስርዓት ተበርክቶላቸዋል።</p>
+                            <p class="lang-en">The leadership and expert Mekonnen Lawaye were specially recognized for their contribution in transforming AWi Transport to a better level.</p>
+                        </div>
+                        <a href="#" class="read-more-btn lang-am">ተጨማሪ ያንብቡ <i class="fas fa-arrow-down"></i></a>
+                        <a href="#" class="read-more-btn lang-en">Read More <i class="fas fa-arrow-down"></i></a>
+                    </div>
+                </article>
+                
+                <article class="news-card">
+                    <div class="news-image">
+                        <img src="images/news3.jpg" alt="News Image">
+                        <div class="news-date">
+                            <span class="day">25</span>
+                            <span class="month">April</span>
+                            <span class="year">2025</span>
+                        </div>
+                    </div>
+                    <div class="news-content">
+                        <h3 class="lang-am">የትራንስፖርት አገልግሎት ማሻሻያ</h3>
+                        <h3 class="lang-en">Transport Service Improvement</h3>
+                        <div class="news-excerpt">
+                            <p class="lang-am">በ2017 ዓ.ም በአዊ ብሔ/አስ የትራንስፖርት እና ሎጀስቲክስ ጽ/ቤት የተሻለ አፈፃፀም ላመጡ ተቋማት፣ ግለሰቦች እና የትራንስፖርት ማህበራት እውቅና ተሰጧቸው</p>
+                            <p class="lang-en">Institutions, individuals and transport associations that performed well in 2017 were recognized</p>
+                        </div>
+                        <div class="news-full">
+                            <p class="lang-am">የአዊ ብሔ/አስ የትራንስፖርት ዘርፉን ወደ ተሻለ ደረጃ እንዲሸጋገር የአምበሳውን ድርሻ እየተወጣ የሚገኘው አመራርና ባለሙያ መኮነን ላዋይን ልዩ ተሸላሚ በማድረግ የምስጋናና የእውቅና ስነስርዓት ተበርክቶላቸዋል።</p>
+                            <p class="lang-en">The leadership and expert Mekonnen Lawaye were specially recognized for their contribution in transforming AWi Transport to a better level.</p>
+                        </div>
+                        <a href="#" class="read-more-btn lang-am">ተጨማሪ ያንብቡ <i class="fas fa-arrow-down"></i></a>
+                        <a href="#" class="read-more-btn lang-en">Read More <i class="fas fa-arrow-down"></i></a>
+                    </div>
+                </article>
+            </div>
+            
+            <!-- See All News Button -->
+            <div class="see-all-news">
+                <a href="news.html" class="btn lang-am">ሁሉንም ዜናዎች ይመልከቱ</a>
+                <a href="news.json" class="btn lang-en">See All News</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section-padding">
+        <div class="container">
+            <h2 class="section-title lang-am">አግኙን</h2>
+            <h2 class="section-title lang-en">Contact Us</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3 class="lang-am">ስልክ</h3>
+                            <h3 class="lang-en">Phone</h3>
+                            <p>058-227-1000</p>
+                            <p>058-227-0786</p>
+                            <p>058-227-1603</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3 class="lang-am">ኢሜይል</h3>
+                            <h3 class="lang-en">Email</h3>
+                            <p>info@awitransport.com</p>
+                            <p>support@awitransport.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3 class="lang-am">አድራሻ</h3>
+                            <h3 class="lang-en">Address</h3>
+                            <p>Injibara, Ethiopia</p>
+                            <p>WAGE Squar, Near Injibara City Admistration</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3 class="lang-am">የስራ ሰዓት</h3>
+                            <h3 class="lang-en">Working Hours</h3>
+                            <p class="lang-am">ሰኞ - አርብ: 2:30 ጥዋት - 11:30 ምሽት</p>
+                            <p class="lang-en">Monday - Friday: 8:30 AM - 5:30 PM</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" class="lang-am" placeholder="ስምዎ" class="lang-en" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" class="lang-am" placeholder="ኢሜይል" class="lang-en" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="subject" class="lang-am" placeholder="ርዕስ" class="lang-en" placeholder="Subject">
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" class="lang-am" placeholder="መልእክትዎ" class="lang-en" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn lang-am">መልእክት ላክ</button>
+                        <button type="submit" class="btn lang-en">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.923034714062!2d38.763774!3d9.010403!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zOcKwMDAnMzcuNSJOIDM4wrA0NSc0OS42IkU!5e0!3m2!1sen!2set!4v1620000000000!5m2!1sen!2set" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col footer-about">
+                    <h3 class="lang-am">ስለ አዊ ትራንስፖርት</h3>
+                    <h3 class="lang-en">About AWi Transport</h3>
+                    <p class="lang-am">አዊ ትራንስፖርት በኢትዮጵያ ውስጥ ከፍተኛ ጥራት ያለው የትራንስፖርት አገልግሎት የሚሰጥ ተቋም ነው።</p>
+                    <p class="lang-en">AWi Transport is a leading transport service provider in Ethiopia delivering high quality services.</p>
+                    <div class="footer-social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col footer-links">
+                    <h3 class="lang-am">ፈጣን አገናኞች</h3>
+                    <h3 class="lang-en">Quick Links</h3>
+                    <ul>
+                        <li><a href="#home" class="lang-am">መነሻ</a><a href="#home" class="lang-en">Home</a></li>
+                        <li><a href="#about" class="lang-am">ስለ እኛ</a><a href="#about" class="lang-en">About Us</a></li>
+                        <li><a href="#leaders" class="lang-am">አመራር</a><a href="#leaders" class="lang-en">Leadership</a></li>
+                        <li><a href="#services" class="lang-am">አገልግሎቶች</a><a href="#services" class="lang-en">Services</a></li>
+                        <li><a href="#gallery" class="lang-am">ፎቶ</a><a href="#gallery" class="lang-en">Gallery</a></li>
+                        <li><a href="#news" class="lang-am">ዜና</a><a href="#news" class="lang-en">News</a></li>
+                        <li><a href="#contact" class="lang-am">አግኙን</a><a href="#contact" class="lang-en">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col footer-services">
+                    <h3 class="lang-am">አገልግሎቶቻችን</h3>
+                    <h3 class="lang-en">Our Services</h3>
+                    <ul>
+                        <li><a href="#" class="lang-am">የሹፌር ፈቃድ</a><a href="#" class="lang-en">Driver Licensing</a></li>
+                        <li><a href="#" class="lang-am">የተሽከርካሪ ምርመራ</a><a href="#" class="lang-en">Vehicle Inspection</a></li>
+                        <li><a href="#" class="lang-am">የመንገድ ደህንነት</a><a href="#" class="lang-en">Traffic Safety</a></li>
+                        <li><a href="#" class="lang-am">የትራንስፖርት አገልግሎት</a><a href="#" class="lang-en">Transport Service</a></li>
+                        <li><a href="#" class="lang-am">ሎጂስቲክስ</a><a href="#" class="lang-en">Logistics</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col footer-contact">
+                    <h3 class="lang-am">የእውቂያ መረጃ</h3>
+                    <h3 class="lang-en">Contact Info</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> <span class="lang-am">አዲስ አበባ፣ ኢትዮጵያ</span><span class="lang-en">Addis Ababa, Ethiopia</span></li>
+                        <li><i class="fas fa-phone"></i> +251 912 345 678</li>
+                        <li><i class="fas fa-envelope"></i> info@awitransport.com</li>
+                        <li><i class="fas fa-clock"></i> <span class="lang-am">ሰኞ-አርብ: 8፡00-5፡00</span><span class="lang-en">Mon-Fri: 8AM - 5PM</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p class="lang-am">&copy; 2024 አዊ ትራንስፖርት. ሁሉም መብቶች የተጠበቁ ናቸው.</p>
+            <p class="lang-en">&copy; 2024 AWi Transport. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // ========== Language Switching Functionality ==========
+            const languageToggle = document.getElementById('languageToggle');
+            const languageDropdown = document.querySelector('.language-dropdown');
+            const switchToEnglish = document.getElementById('switchToEnglish');
+            const switchToAmharic = document.getElementById('switchToAmharic');
+
+            // Set initial language to Amharic
+            document.body.classList.remove('english');
+
+            // Toggle language dropdown
+            if (languageToggle) {
+                languageToggle.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    languageDropdown.classList.toggle('active');
+                });
+            }
+
+            // Close dropdown when clicking outside
+            document.addEventListener('click', function() {
+                languageDropdown.classList.remove('active');
+            });
+
+            // Switch to English
+            if (switchToEnglish) {
+                switchToEnglish.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    document.body.classList.add('english');
+                    languageDropdown.classList.remove('active');
+                    // Update toggle button text
+                    if (languageToggle) {
+                        languageToggle.innerHTML = '<i class="fas fa-globe"></i> አማርኛ <i class="fas fa-chevron-down"></i>';
+                    }
+                    updateActiveNav();
+                });
+            }
+
+            // Switch to Amharic
+            if (switchToAmharic) {
+                switchToAmharic.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    document.body.classList.remove('english');
+                    languageDropdown.classList.remove('active');
+                    // Update toggle button text
+                    if (languageToggle) {
+                        languageToggle.innerHTML = '<i class="fas fa-globe"></i> English <i class="fas fa-chevron-down"></i>';
+                    }
+                    updateActiveNav();
+                });
+            }
+
+            // ========== Swiper Sliders Initialization ==========
+            // Hero Slider
+            const heroSwiper = new Swiper('.hero-slider .swiper-container', {
+                loop: true,
+                autoplay: {
+                    delay: 5000,
+                    disableOnInteraction: false,
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                effect: 'fade',
+                fadeEffect: {
+                    crossFade: true
+                },
+            });
+
+            // Gallery Slider - Improved with pagination
+            const gallerySwiper = new Swiper('.gallery-swiper', {
+                slidesPerView: 1,
+                spaceBetween: 20,
+                loop: true,
+                autoplay: {
+                    delay: 3000,
+                    disableOnInteraction: false,
+                },
+                pagination: {
+                    el: '.gallery-pagination',
+                    clickable: true,
+                    renderBullet: function (index, className) {
+                        return '<span class="' + className + '">' + (index + 1) + '</span>';
+                    },
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                breakpoints: {
+                    576: {
+                        slidesPerView: 1.5,
+                    },
+                    768: {
+                        slidesPerView: 2,
+                    },
+                    992: {
+                        slidesPerView: 3,
+                    },
+                    1200: {
+                        slidesPerView: 4,
+                    }
+                }
+            });
+
+            // ========== News Read More Functionality ==========
+            const readMoreBtns = document.querySelectorAll('.read-more-btn');
+            readMoreBtns.forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const newsCard = this.closest('.news-card');
+                    const excerpt = newsCard.querySelector('.news-excerpt');
+                    const fullContent = newsCard.querySelector('.news-full');
+                    
+                    if (fullContent.style.display === 'none' || !fullContent.style.display) {
+                        fullContent.style.display = 'block';
+                        excerpt.style.display = 'none';
+                        if (this.classList.contains('lang-am')) {
+                            this.innerHTML = 'ትንሽ አሳይ <i class="fas fa-arrow-up"></i>';
+                        } else {
+                            this.innerHTML = 'Read Less <i class="fas fa-arrow-up"></i>';
+                        }
+                        this.classList.add('active');
+                        
+                        // Scroll to show the expanded content
+                        newsCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                    } else {
+                        fullContent.style.display = 'none';
+                        excerpt.style.display = 'block';
+                        if (this.classList.contains('lang-am')) {
+                            this.innerHTML = 'ተጨማሪ ያንብቡ <i class="fas fa-arrow-down"></i>';
+                        } else {
+                            this.innerHTML = 'Read More <i class="fas fa-arrow-down"></i>';
+                        }
+                        this.classList.remove('active');
+                    }
+                });
+            });
+
+            // ========== Sticky Header & Scroll Effects ==========
+            const header = document.querySelector('.sticky-header');
+            const backToTop = document.querySelector('.back-to-top');
+            
+            window.addEventListener('scroll', function() {
+                // Sticky header effect
+                if (window.scrollY > 100) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+                
+                // Back to top button visibility
+                if (window.scrollY > 300) {
+                    backToTop.classList.add('active');
+                } else {
+                    backToTop.classList.remove('active');
+                }
+                
+                // Update active navigation item
+                updateActiveNav();
+            });
+
+            // Back to top button functionality
+            if (backToTop) {
+                backToTop.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Reset URL hash if present
+                    history.pushState('', document.title, window.location.pathname + window.location.search);
+                });
+            }
+
+            // ========== Mobile Menu Functionality ==========
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            
+            if (menuToggle && navLinks) {
+                menuToggle.addEventListener('click', function() {
+                    navLinks.classList.toggle('active');
+                    this.classList.toggle('active');
+                    
+                    // Toggle body overflow when menu is open
+                    if (navLinks.classList.contains('active')) {
+                        document.body.style.overflow = 'hidden';
+                    } else {
+                        document.body.style.overflow = '';
+                    }
+                });
+
+                // Close mobile menu when clicking on a link
+                document.querySelectorAll('.nav-links a').forEach(link => {
+                    link.addEventListener('click', function() {
+                        navLinks.classList.remove('active');
+                        menuToggle.classList.remove('active');
+                        document.body.style.overflow = '';
+                        
+                        // Set active nav item
+                        document.querySelectorAll('.nav-links a').forEach(navLink => {
+                            navLink.classList.remove('active');
+                        });
+                        this.classList.add('active');
+                    });
+                });
+            }
+
+            // ========== Smooth Scrolling ==========
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    // Skip for elements that shouldn't scroll (like read more buttons)
+                    if (this.classList.contains('read-more-btn') || 
+                        this.classList.contains('language-dropdown') || 
+                        this.id === 'languageToggle') {
+                        return;
+                    }
+                    
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        // Calculate offset considering header height
+                        const headerHeight = document.querySelector('.sticky-header').offsetHeight;
+                        const targetPosition = targetElement.offsetTop - headerHeight;
+                        
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Update URL without jumping
+                        if (history.pushState) {
+                            history.pushState(null, null, targetId);
+                        } else {
+                            location.hash = targetId;
+                        }
+                    }
+                });
+            });
+
+            // ========== Contact Form Handling ==========
+            const contactForm = document.getElementById('contactForm');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Get form values
+                    const name = document.getElementById('name').value.trim();
+                    const email = document.getElementById('email').value.trim();
+                    const subject = document.getElementById('subject').value.trim();
+                    const message = document.getElementById('message').value.trim();
+                    
+                    // Simple validation
+                    if (!name || !email || !message) {
+                        if (document.body.classList.contains('english')) {
+                            alert('Please fill in all required fields.');
+                        } else {
+                            alert('እባክዎ ሁሉንም አስፈላጊ መስኮች ይሙሉ።');
+                        }
+                        return;
+                    }
+                    
+                    // Email validation
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRegex.test(email)) {
+                        if (document.body.classList.contains('english')) {
+                            alert('Please enter a valid email address.');
+                        } else {
+                            alert('እባክዎ ትክክለኛ የኢሜል አድራሻ ያስገቡ።');
+                        }
+                        return;
+                    }
+                    
+                    // Here you would typically send the form data to a server
+                    // For demonstration, we'll just show an alert
+                    if (document.body.classList.contains('english')) {
+                        alert(`Thank you, ${name}! Your message has been received. We'll contact you soon at ${email}.`);
+                    } else {
+                        alert(`አመሰግናለሁ ${name}! መልእክትዎ ተቀብለናል። በ${email} በቅርብ ጊዜ እናግኝዎታለን።`);
+                    }
+                    
+                    // Reset the form
+                    contactForm.reset();
+                });
+            }
+
+            // ========== Helper Functions ==========
+            function updateActiveNav() {
+                const sections = document.querySelectorAll('section');
+                let currentSection = '';
+                const scrollPosition = window.scrollY + 150; // Adding offset for better detection
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.offsetHeight;
+                    
+                    if (scrollPosition >= sectionTop && scrollPosition < (sectionTop + sectionHeight)) {
+                        currentSection = section.getAttribute('id');
+                    }
+                });
+                
+                document.querySelectorAll('.nav-links a').forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${currentSection}`) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+
+            // Initialize active nav on page load
+            updateActiveNav();
+        });
+    </script>
+</body>
+</html>

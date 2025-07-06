@@ -1,0 +1,22 @@
+{
+  "news": [
+    {
+      "id": 1,
+      "title": "AWi Transport Expands Services",
+      "title_am": "አዊ ትራንስፖርት አገልግሎቶች ማስ�ራት",
+      "date": "2023-11-20",
+      "content": "We are proud to announce new routes in East Africa...",
+      "content_am": "በምሥራቅ አፍሪካ ውስጥ አዳዲስ መስመሮች...",
+      "image": "images/news/expansion.jpg"
+    },
+    {
+      "id": 2,
+      "title": "New Fleet Acquisition",
+      "title_am": "አዲስ የተሽከርካሪ እቃ ግዥ",
+      "date": "2023-10-15",
+      "content": "20 new trucks added to our logistics fleet...",
+      "content_am": "20 አዳዲስ ከረጢቶች ወደ ሎጂስቲክስ እቃዎቻችን ታክለዋል...",
+      "image": "images/news/fleet.jpg"
+    }
+  ]
+}

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="am">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>አዊ ትራንስፓርት እና ሎጅልሲስ</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { font-family: 'Segoe UI', sans-serif; scroll-behavior: smooth; }
+
+    header { background: #013f6b; color: white; text-align: center; padding: 20px; }
+    nav {
+      background: #005a9c; padding: 10px; text-align: center; position: sticky; top: 0; z-index: 1000;
+    }
+    nav a {
+      color: white; text-decoration: none; margin: 0 10px; font-weight: bold; transition: color 0.3s ease;
+    }
+    nav a:hover { color: #ffcc00; }
+
+    .hero-slide {
+      width: 100%; height: 400px;
+      background: url('images/bg1.jpg') no-repeat center center / cover;
+      position: relative; display: flex;
+      justify-content: center; align-items: center;
+      transition: background-image 1s ease-in-out; overflow: hidden;
+    }
+    .hero-slide::before {
+      content: ""; position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.4); z-index: 1;
+    }
+    .hero-text {
+      position: relative; z-index: 2;
+      text-align: center; color: white;
+      font-size: 2.2em; text-shadow: 2px 2px 8px black;
+      animation: fadeInUp 1.5s ease-in-out;
+    }
+    .hero-text span {
+      display: block; font-size: 0.6em; margin-top: 10px;
+    }
+    .controls {
+      position: absolute; top: 50%; width: 100%; z-index: 3;
+      display: flex; justify-content: space-between;
+      padding: 0 20px; transform: translateY(-50%);
+    }
+    .controls i {
+      font-size: 2rem; color: white;
+      cursor: pointer; background: rgba(0,0,0,0.3);
+      padding: 10px; border-radius: 50%; transition: 0.3s;
+    }
+    .controls i:hover { background: rgba(255,255,255,0.3); }
+
+    .language-switch {
+      position: absolute; top: 15px; right: 15px; z-index: 10;
+    }
+    .language-switch button {
+      padding: 6px 12px; margin-left: 5px; border: none;
+      border-radius: 5px; background-color: #ffffffaa;
+      cursor: pointer; transition: background 0.3s;
+    }
+    .language-switch button:hover { background-color: #dddddd; }
+
+    section {
+      padding: 60px 20px; max-width: 1000px; margin: auto;
+    }
+    h2 { color: #005a9c; margin-bottom: 20px; }
+
+    ul {
+      list-style: none; padding-left: 0;
+    }
+    ul li::before {
+      content: "\2713 "; color: #005a9c; font-weight: bold; margin-right: 5px;
+    }
+
+    .section { margin-bottom: 50px; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .map-container {
+      margin-top: 20px; height: 400px;
+    }
+    .map-container iframe {
+      width: 100%; height: 100%; border: none;
+    }
+
+    footer {
+      background: #013f6b; color: white; text-align: center; padding: 15px;
+    }
+
+    @media (max-width: 768px) {
+      .hero-text { font-size: 1.5em; }
+      .hero-slide { height: 280px; }
+    }
+
+    @media (max-width: 500px) {
+      nav a { display: block; margin: 10px 0; }
+      .language-switch { top: 5px; right: 5px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="language-switch">
+  <button onclick="setLang('am')">አማ</button>
+  <button onclick="setLang('en')">EN</button>
+</div>
+
+<header>
+  <h1 id="title">አዊ ትራንስፓርት እና ሎጅልሲስ ጭ/ቤት</h1>
+  <p id="subtitle">awitransport.gov.et</p>
+</header>
+
+<nav>
+  <a href="#home">Home</a>
+  <a href="#about">ስለእኛ</a>
+  <a href="#services">አገልግሎቶፍ</a>
+  <a href="#contact">አግዙኑን</a>
+</nav>
+
+<div class="hero-slide" id="hero">
+  <div class="hero-text" id="heroText">
+    አዊ ብሔራዒ ትራንስፓርት እና ሎጅልሲስ ጭ/ቤት <br />
+    <span>Awi Zone Transport & Logistics Office</span>
+  </div>
+  <div class="controls">
+    <i class="fas fa-chevron-left" onclick="prevSlide()"></i>
+    <i class="fas fa-chevron-right" onclick="nextSlide()"></i>
+  </div>
+</div>
+
+<!-- ስለእኛ -->
+<section id="about">
+  <h2>ስለ ቢሮው</h2>
+  <p>...</p>
+</section>
+
+<section>
+  <h2 data-am="ራዕይ" data-en="Vision">ራዕይ</h2>
+  <p> የብሔረሰብ አስተዳደሩን የትራንስፖርት መሰረተ ልማት በማስፋፋት በ2022 ህብረተሰቡ ደህንነቱ የተጠበቀ፣ ቀልጣፋና ዘመናዊ የትራንስፖርትና ሎጅስቲክስ አገልግሎት ተጠቃሚ ሆኖ ማየት።</p>
+</section>
+
+<section>
+  <h2 data-am="ተልዕኮ" data-en="Mission">ተልዕኮ</h2>
+  <p>የብሔረሰብ አስተዳደሩን የትራንስፖርት መሰረተ ልማት በማስፋፋት፣ ባለድርሻ አካላትን በማስተባበር፣ አገልግሎት አሰጣጡን በቴክኖሎጂ በማስደገፍ፣ ህግና ስርዓትን በማስከበር፣ ዘመናዊ፣ ቀልጣፋ፣ ምቾቱና ደህንነቱ የተጠበቀ የትራንስፖርትና የሎጅስቲክስ አገልግሎት መስጠት።</p>
+</section>
+
+<h3>እሴቶች</h3>
+<ul>
+  <li>የተገልጋዩ ጥቅም ያስጠበቀ</li>
+  <li>ከብልሹ አሰራር የፀዳ</li>
+  <li>ሙስናን ኪራይ ሰብሳቢነትን የተፀየፈ</li>
+  <li>በግልጽነትና ተጠያቂነት የተመሰረተ አገልግሎት</li>
+</ul>
+
+<section>
+  <h2>አቅጣጫ ጠቋሚዎች</h2>
+  <div class="grid">
+    <div><h3>1</h3><p>የጽ/ቤት ኃላፊ</p></div>
+    <div><h3>2</h3><p>የእቅ/ዝግ/ዝ...</p></div>
+    <!-- ... -->
+  </div>
+</section>
+
+<section>
+  <h2>📍 ካርታ</h2>
+  <div class="map-container">
+    <iframe src="https://www.google.com/maps/embed?..." allowfullscreen="" loading="lazy"></iframe>
+  </div>
+</section>
+
+<section id="services">
+  <h2>አገልግሎቶች</h2>
+  <ul>
+    <li>ብቃት ፈቃድ መስጠት</li>
+    <li>የምዘና ቀጠሮ መስጠት</li>
+    <li>የሳምንታዊ ተመን</li>
+  </ul>
+</section>
+
+<section id="contact">
+  <h2>አግኙን</h2>
+  <p>አድራሻ፡ አዲስ አበባ | ስልክ፡ 0987654321 | ኢሜይል፡ info@awitransport.gov.et</p>
+</section>
+
+<footer>
+  <p>&copy; 2025 አዊ ትራንስፓርት - መብት የተጠበቀ</p>
+</footer>
+
+<script>
+  const hero = document.getElementById('hero');
+  const heroText = document.getElementById('heroText');
+  const backgrounds = ['images/bg1.jpg','images/bg2.jpg','images/bg3.jpg'];
+  const texts = [
+    { am: 'አዊ ትራንስፓርት እና ሎጅልሲስ ጭ/ቤት', en: 'Awi Zone Transport & Logistics Office' },
+    { am: 'አስተማማኝ ትራንስፓርት አገልግሎት', en: 'Reliable Transport Service' },
+    { am: 'ዘመናዊ ሎጅስቲክስ እና ቴክኖሎጂ', en: 'Modern Logistics and Technology' }
+  ];
+  let index = 0;
+
+  function setLang(lang) {
+    document.getElementById("title").textContent = lang === 'am' ? texts[index].am : texts[index].en;
+    document.querySelectorAll('[data-am]').forEach(el => {
+      el.textContent = lang === 'am' ? el.getAttribute('data-am') : el.getAttribute('data-en');
+    });
+  }
+
+  function showSlide(i) {
+    hero.style.backgroundImage = `url('${backgrounds[i]}')`;
+    heroText.innerHTML = `${texts[i].am}<br/><span>${texts[i].en}</span>`;
+  }
+
+  function nextSlide() {
+    index = (index + 1) % backgrounds.length;
+    showSlide(index);
+  }
+
+  function prevSlide() {
+    index = (index - 1 + backgrounds.length) % backgrounds.length;
+    showSlide(index);
+  }
+
+  let isPaused = false;
+  hero.addEventListener('mouseenter', () => isPaused = true);
+  hero.addEventListener('mouseleave', () => isPaused = false);
+
+  setInterval(() => {
+    if (!isPaused) nextSlide();
+  }, 5000);
+
+  showSlide(index);
+</script>
+
+</body>
+</html>
